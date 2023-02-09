@@ -1,24 +1,29 @@
 import {BsFillPlusCircleFill, BsThreeDotsVertical} from "react-icons/bs";
-import { Card } from "../Card/Card";
+import {Card} from "../Card/Card";
 
-export const AddTask = () => {
+interface AddTaskProps {
+    name: string;
+    count: number;
+}
+
+export const AddTask = ({name, count}: AddTaskProps) => {
     return (
         <Card>
             <div className="flex justify-between">
-            <div>
-                    <h2>To Do</h2>
-                <div className="text-xs text-stone-400 mt-2">
-                    <span> 12 Card task</span>
+                <div>
+                    <h2>{name}</h2>
+                    <div className="text-xs text-stone-400 mt-2">
+                        <span> {count} tasks </span>
+                    </div>
                 </div>
-            </div>
-            <div className="flex justify-center items-center">
-                <div className="mr-3">
-                    <BsFillPlusCircleFill size="1.9em" color="#0E8BD0"/>
+                <div className="flex justify-center items-center">
+                    <div className="mr-3">
+                        <BsFillPlusCircleFill size="1.9em" color="#0E8BD0"/>
+                    </div>
+                    <div className="mr-3">
+                        <BsThreeDotsVertical size="1.3em"/>
+                    </div>
                 </div>
-                <div className="mr-3">
-                    <BsThreeDotsVertical size="1.3em"/>
-                </div>
-            </div>
             </div>
         </Card>
     )

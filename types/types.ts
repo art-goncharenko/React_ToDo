@@ -12,4 +12,12 @@ export interface ITask {
     description: string;
     tags: string[];
     assignees: IUser[];
+    status: string;
+    order: number;
+}
+
+export interface IStatus {
+    id: string;
+    name: string;
+    order: number;
 }
